@@ -3,6 +3,10 @@ This package optimizes images on localdisk via command line.
 
 ## Usage
 
+### Installation
+```bash
+npm install -g phoptimizer
+```
 ### Story
 You have a example.jpg in current command line directory. <br />
 Example.jpg is (4,752px X 3,168px) and 1.95MB.
