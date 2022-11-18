@@ -20,14 +20,14 @@ Example.jpg is still (4,752px X 3,168px) and 1.95mB. <br />
 Example_optimised.jpg is (1920px X 1280px) and 351kB.
 
 ## Args
-| Arg | Alias | Type | Description | Default | Example |
-| :---: | :---: | :---: | :---:| :---: | :---: |
-| --file | -f | string | File Name | ALL in path | example.jpg |
-| --path | -p | string | Path Name | Current path (process.cwd()) | C:/users/phibersoft |
-| --overwrite | -o | boolean | Optimized image will overwrite original image. | false | true |
-| --width | -w | number | Image width | 1920 | 2400 |
-| --height | -he | number | Image height | Auto by width | 1080 |
-| --quality | -q | number | Image Quality | 70 | 100 |
+|     Arg     | Alias |  Type   |                  Description                   |           Default            |       Example       |
+|:-----------:|:-----:|:-------:|:----------------------------------------------:|:----------------------------:|:-------------------:|
+|   --file    |  -f   | string  |                   File Name                    |         ALL in path          |     example.jpg     |
+|   --path    |  -p   | string  |                   Path Name                    | Current path (process.cwd()) | C:/users/phibersoft |
+| --overwrite |  -o   | boolean | Optimized image will overwrite original image. |            false             |        true         |
+|   --width   |  -w   | number  |                  Image width                   |             1920             |        2400         |
+|  --height   |  -he  | number  |                  Image height                  |        Auto by width         |        1080         |
+|  --quality  |  -q   | number  |                 Image Quality                  |              70              |         100         |
 
 ## Examples
 ### Specific file with custom configuration
