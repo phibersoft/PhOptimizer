@@ -8,13 +8,14 @@ export const optimizer = async (
   height = AUTO,
   quality = 80
 ) => {
-  const image = await read(path);
+  const imagePath = `${path}\\${imageName}`;
+  const image = await read(imagePath);
 
   await image.contain(width, height);
   await image.quality(quality);
 
   if (overwrite) {
-    await image.writeAsync(`${path}\\${imageName}`);
+    await image.writeAsync(imagePath);
   } else {
     const imageNameSplitted = imageName.split(".");
     const imageNameWithoutExtension = imageNameSplitted

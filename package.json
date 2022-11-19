@@ -1,6 +1,6 @@
 {
   "name": "phoptimizer",
-  "version": "2.0.0",
+  "version": "2.5.5",
   "description": "Image optimization from cli",
   "main": "./src/main.ts",
   "author": "phibersoft",
@@ -17,14 +17,10 @@
   },
   "dependencies": {
     "argparse": "^2.0.1",
-    "cli-spinners": "^2.7.0",
-    "cors": "^2.8.5",
-    "jimp": "^0.16.2",
-    "log-update": "^5.0.1"
+    "jimp": "^0.16.2"
   },
   "devDependencies": {
     "@types/argparse": "^2.0.10",
-    "@types/chalk": "^2.2.0",
     "@types/jimp": "^0.2.28",
     "@types/node": "^18.11.9",
     "ts-loader": "^9.4.1",

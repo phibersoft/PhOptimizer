@@ -2,11 +2,8 @@ import "./lib/uncaught-handler";
 import { AUTO } from "jimp";
 import { ArgumentParser } from "argparse";
 import { createInterface } from "readline";
-import cliSpinners from "cli-spinners";
 import * as fs from "fs";
 import { colored, optimizer } from "./lib";
-
-const logUpdate = require("log-update");
 
 const parser = new ArgumentParser({
   description: "Phoptimizator is a simple image optimizator from -cli.",
@@ -69,19 +66,21 @@ const options = parser.parse_args();
 
           return SUPPORTED_TYPES.includes(extension);
         });
+
+        console.log(optimizeFiles);
       } else {
         optimizeFiles.push(options.file);
       }
 
-      const spinner = cliSpinners.dots;
-      let i = 0;
+      for (let i = 0; i < optimizeFiles.length; i++) {
+        const file = optimizeFiles[i];
+        console.log(
+          colored(
+            `Optimizing ${file}... [${i + 1}/${optimizeFiles.length}]`,
+            "info"
+          )
+        );
 
-      const interval = setInterval(() => {
-        const { frames } = spinner;
-        logUpdate(frames[(i = ++i % frames.length)]);
-      }, spinner.interval);
-
-      for (const file of optimizeFiles) {
         await optimizer(
           options.path,
           file,
@@ -92,10 +91,10 @@ const options = parser.parse_args();
         );
       }
 
-      clearInterval(interval);
-      logUpdate(colored("Optimization completed!", "success"));
+      console.log(colored("Optimization completed!", "success"));
+      process.exit(5);
     } else {
-      logUpdate(colored("Optimization canceled!", "error"));
+      console.log(colored("Optimization canceled!", "error"));
       process.exit(13);
     }
   });
