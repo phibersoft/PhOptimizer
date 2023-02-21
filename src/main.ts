@@ -87,7 +87,7 @@ const options = parser.parse_args();
           options.overwrite,
           typeof options.width === "number" ? options.width : Number(options.width),
           typeof options.height === "number" ? options.height : Number(options.height),
-          options.quality
+          typeof options.quality === "number" ? options.quality : Number(options.quality)
         );
       }
 
