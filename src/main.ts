@@ -1,9 +1,9 @@
-import "./lib/uncaught-handler";
-import { AUTO } from "jimp";
 import { ArgumentParser } from "argparse";
-import { createInterface } from "readline";
 import * as fs from "fs";
+import { AUTO } from "jimp";
+import { createInterface } from "readline";
 import { colored, optimizer } from "./lib";
+import "./lib/uncaught-handler";
 
 const parser = new ArgumentParser({
   description: "Phoptimizator is a simple image optimizator from -cli.",
@@ -85,8 +85,8 @@ const options = parser.parse_args();
           options.path,
           file,
           options.overwrite,
-          options.width,
-          options.height,
+          typeof options.width === "number" ? options.width : Number(options.width),
+          typeof options.height === "number" ? options.height : Number(options.height),
           options.quality
         );
       }
